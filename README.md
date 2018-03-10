@@ -1,4 +1,4 @@
-# helm-gtags.el [![travis badge][travis-badge]][travis-link] [![melpa badge][melpa-badge]][melpa-link] [![melpa stable badge][melpa-stable-badge]][melpa-stable-link]
+# helm-gtags.el [![travis badge][travis-badge]][travis-link]
 
 ## Introduction
 `helm-gtags.el` is GNU GLOBAL helm interface.
@@ -11,31 +11,16 @@
 
 ## Requirements
 
-* Emacs 24 or higher.
+* Emacs 24 or higher
 * helm 1.7.7 or higher
-* GNU Global 6.2.3 or higher
+* GNU GLOBAL 6.2.3 or higher
 
 `helm-gtags.el` does not require `gtags.el`.
-
-#### Ubuntu/Debian users
-
-Please do not use Ubuntu/Debian GNU gtags package. It's too old.
-
-
-## Installation
-
-`helm-gtags` is available on [MELPA](https://melpa.org/) and [MELPA stable](https://stable.melpa.org/)
-
-You can install `helm-gtags` with the following command.
-
-<kbd>M-x package-install [RET] helm-gtags [RET]</kbd>
 
 
 ## Use Ctags with helm-gtags
 
-You can use `helm-gtags` for languages which are supported by `ctags`(Both [exuberant ctags](http://ctags.sourceforge.net/) and [universal ctags](https://ctags.io/))
-with ctags backend feature of `GNU global`. You can generate `ctags` backend
-tags by following command.
+You can use `helm-gtags` for languages which are supported by `ctags` (both [exuberant ctags](http://ctags.sourceforge.net/) and [universal ctags](https://ctags.io/)) with ctags backend feature of `GNU GLOBAL`. You can generate `ctags` backend tags by following command.
 
 ```
 # exuberant ctags
@@ -263,8 +248,8 @@ Please set small number if you feel slow for large source tree
 such as Linux kernel.
 
 Default value is
-- 9999(Disable fuzzy match)
-- 100(Enable fuzzy match)
+- 9999 (disable fuzzy match)
+- 100 (enable fuzzy match)
 
 #### `helm-gtags-preselect`
 
@@ -272,18 +257,25 @@ If this variable is non-nil, preselect current file and line.
 
 #### `helm-gtags-cygwin-use-global-w32-port`
 
-This variable is only for Cygwin users. If you use both Cygwin version Emacs
-and GNU global, please set `nil` to this variable.
+This variable is only for Cygwin users. If you use both Cygwin version Emacs and GNU GLOBAL, please set `nil` to this variable.
 
 ## Faces
 
 #### `helm-gtags-file`
 
-Face of file name of candidates
+Face used for file name.
 
 #### `helm-gtags-lineno`
 
-Face of line number of candidates
+Face used for line number.
+
+#### `helm-gtags-match`
+
+Face used for tag highlight.
+
+#### `helm-gtags-tag`
+
+Face used for tag.
 
 
 ## anything-gtags.el
@@ -309,7 +301,9 @@ by itself, so `helm-gtags.el` is faster than `anything-gtags.el`.
 (custom-set-variables
  '(helm-gtags-path-style 'relative)
  '(helm-gtags-ignore-case t)
- '(helm-gtags-auto-update t))
+ '(helm-gtags-auto-update t)
+ '(helm-gtags-direct-helm-completing t)
+ '(helm-gtags-fuzzy-match t))
 
 ;; key bindings
 (with-eval-after-load 'helm-gtags
@@ -322,9 +316,5 @@ by itself, so `helm-gtags.el` is faster than `anything-gtags.el`.
   (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack))
 ```
 
-[travis-badge]: https://travis-ci.org/syohex/emacs-helm-gtags.svg
-[travis-link]: https://travis-ci.org/syohex/emacs-helm-gtags
-[melpa-link]: https://melpa.org/#/helm-gtags
-[melpa-stable-link]: https://stable.melpa.org/#/helm-gtags
-[melpa-badge]: https://melpa.org/packages/helm-gtags-badge.svg
-[melpa-stable-badge]: https://stable.melpa.org/packages/helm-gtags-badge.svg
+[travis-badge]: https://travis-ci.org/jacekmigacz/emacs-helm-gtags.svg
+[travis-link]: https://travis-ci.org/jacekmigacz/emacs-helm-gtags
