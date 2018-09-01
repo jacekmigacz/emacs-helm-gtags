@@ -750,7 +750,7 @@ Always update if value of this variable is nil."
       (format "%s:%s:%s"
               (propertize (match-string 1 removed-file) 'face 'helm-gtags-tag)
               (propertize (match-string 2 removed-file) 'face 'helm-gtags-lineno)
-              (helm-gtags--highlight-candidate (match-string 3 removed-file))))))
+              (string-trim-left (helm-gtags--highlight-candidate (match-string 3 removed-file)))))))
 
 (defvar helm-source-gtags-find-tag-from-here
   (helm-build-in-buffer-source "Find tag from here"
